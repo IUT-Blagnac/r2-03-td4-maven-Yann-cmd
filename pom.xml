@@ -8,6 +8,7 @@
   <version>1.0</version>
   <packaging>jar</packaging>
     <properties>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -28,7 +29,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>HelloJava</mainClass>
+              <mainClass>NouveauJava</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -38,6 +39,19 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.3.2</version>
         <configuration> <source>8</source> </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.15</version>
+      <configuration>
+        <argLine>-Dfile.encoding=-Dfile.encoding=cp850</argLine>
+      </configuration>
       </plugin>
     </plugins>
   </build>
